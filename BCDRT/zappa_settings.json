@@ -1,0 +1,14 @@
+{
+    "dev": {
+        "aws_region": "us-west-2",
+        "django_settings": "BCDRT.settings",
+        "profile_name": "default",
+        "project_name": "bcdrt",
+        "runtime": "python3.6",
+        "s3_bucket": "bcdrtfinal",
+        "vpc_config" : {
+            "SubnetIds": [ "subnet-0e28b6df0dfeb449d","subnet-0e28b6df0dfeb449d","subnet-09dcc863d20dc6b3b"],
+            "SecurityGroupIds": [ "sg-0071aae7ba6675eaf" ]
+        }
+    }
+}
