@@ -1,6 +1,7 @@
 # BriteCoreDRT
 A test deployment for Dynamic Insurance Risks Type
-#Installation
+
+# Installation
 In your project folder
 ```
 virtualenv env
