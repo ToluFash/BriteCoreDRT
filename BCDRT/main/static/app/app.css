@@ -1,0 +1,129 @@
+body
+{
+    font-family: Arial, Verdana, sans-serif;
+    background-color: #FFFFFF;
+}
+.logo{
+    width: 15%;
+    height: 2%;
+    border-radius: 3%;
+    padding: 1% 1% 1% 1%;
+}
+img.logoimage
+{
+    width: 120%;
+}
+.content{
+    background-color: #f6f0eb;
+    font-family: "Monotype Corsiva", "Apple Chancery", "URW Chancery L", cursive;
+    font-size: 150%;
+    padding: 5% 5% 5% 5%;
+    width: 60%;
+    height: 60%;
+    margin: 5% 10% 0% 15%;
+}
+h1.header
+{
+    color: #6AA8A8;
+}
+.fields
+{
+    font-family: "Monotype Corsiva", "Apple Chancery", "URW Chancery L", cursive;
+    background-color: #f6f0eb;
+    font-size: 150%;
+    padding: 5% 5% 5% 5%;
+    width: 60%;
+    margin: 5% 10% 0% 15%;
+}
+input{
+    color: #325B7A;
+    border-radius: 5%;
+    margin-top: 1%;
+    width: 90%;
+    height: 50%;
+    padding: 1.2% 1.2% 1.2% 1.2%;
+    font-size: 70%;
+}
+.input{
+
+    font-family: "Monotype Corsiva", "Apple Chancery", "URW Chancery L";
+    width: 100%;
+    font-size: 60%;
+}
+.error{
+
+    font-size: 70%;
+    color: #FF0800;
+    font-weight: normal;
+    font-family: "Century Gothic", Verdana, sans-serif;
+}
+.submitButton
+{
+    margin: 1% 0% 0% 0%;
+    padding: 1%;
+    float: right;
+    border-radius: 10%;
+    border: thin solid #dec03b;
+    background-color: #207c49;
+    color: #FFFFFF;
+}
+.submiterror{
+    text-align: center;
+    background-color: #E3F3F6;
+    font-size: 80%;
+    width: 70%;
+    border-radius: 1%;
+    margin: 5% 10% 0% 15%;
+}
+.submitsuccess{
+    font-family: "Monotype Corsiva", "Apple Chancery", "URW Chancery L";
+    text-align: center;
+    background-color: #f6efea;
+    font-size: 150%;
+    width: 60%;
+    border-radius: 1%;
+    border: thin solid BLACK;
+    margin: 5% 10% 0% 15%;
+}
+.prev{
+    margin: 1% 0% 0% 0%;
+    padding: 1%;
+    float: left;
+    border-radius: 10%;
+    border: thin solid #dec03b;
+    background-color: #a0101e;
+    color: #FFFFFF;
+}
+select{
+    font-family: "Century Gothic", Verdana, sans-serif;
+    font-size: 45%;
+    border-radius: 8%;
+}
+.rehome{
+    margin-left: 40%;
+    margin-top: 2%;
+    padding: 2%;
+    float: left;
+    border-radius: 10%;
+    border: thin solid #dec03b;
+    background-color: #323c7c;
+    color: #FFFFFF;
+
+}
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+}
+.slide-fade-enter-active {
+    transition: all .3s ease;
+}
+.slide-fade-leave-active {
+    transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+    /* .slide-fade-leave-active below version 2.1.8 */ {
+    transform: translateX(10px);
+    opacity: 0;
+}

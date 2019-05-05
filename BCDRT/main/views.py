@@ -1,4 +1,4 @@
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse
 from django.views import View
 from django.core import serializers
@@ -7,6 +7,11 @@ import json
 from django.http import JsonResponse
 import datetime
 
+
+class IndexView(View):
+
+    def get(self, request):
+        return render(request, 'BriteCore/index.html')
 
 class RiskTypeView(View):
 

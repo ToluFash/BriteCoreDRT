@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'h79wfqw4o5$1tzhr)$l_%a2k2#&4xu1@5oqm(anveq9z6mnr+3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['422hshng13.execute-api.us-west-2.amazonaws.com', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -40,7 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_s3_storage'
 ]
-INSTALLED_APPS += ['zappa_django_utils']
+INSTALLED_APPS += [
+    'zappa_django_utils',
+    'corsheaders'
+    ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -49,6 +52,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'BCDRT.urls'
@@ -82,6 +87,16 @@ DATABASES = {
         'USER': 'test',
         'PASSWORD': 'testtesttest',
         'HOST': 'test2.c50ctdgqzihj.us-west-2.rds.amazonaws.com',   # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
+    }
+}
+DATABASESs = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mysql',
+        'USER': 'test',
+        'PASSWORD': 'testtesttest',
+        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
         'PORT': '3306',
     }
 }
@@ -130,7 +145,7 @@ if DEBUG:
     import mimetypes
     mimetypes.add_type("application/javascript", ".js", True)
 
-YOUR_S3_BUCKET = "bcdrt-static"
+YOUR_S3_BUCKET = "bcdrt-prod"
 
 STATICFILES_STORAGE = "django_s3_storage.storage.StaticS3Storage"
 AWS_S3_BUCKET_NAME_STATIC = YOUR_S3_BUCKET
@@ -138,4 +153,7 @@ AWS_S3_BUCKET_NAME_STATIC = YOUR_S3_BUCKET
 # These next two lines will serve the static files directly
 # from the s3 bucket
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % YOUR_S3_BUCKET
-STATIC_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
+STATIC_URLs = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
+
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = False
