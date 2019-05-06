@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'BCDRT.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-DATABASES = {
+DATABASESs = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'test',
@@ -90,7 +90,7 @@ DATABASES = {
         'PORT': '3306',
     }
 }
-DATABASESs = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mysql',
