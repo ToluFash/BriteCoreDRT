@@ -226,7 +226,7 @@ lambda-subnet-point-to-igw | lambda-rt-to-igw
  
 Add the Security Group to Lambda
 * Go to AWS Lamda
-* Ensure your in the right region (I am using us-west-2 so it says Oregon in the top right next to Support and my name)
+* Ensure you're in the right region (same as region in zappa_settings)
 * Open sidebar, click Functions
 * Navigate to your Zappa Deployment. 
 * Scroll down to Network
