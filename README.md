@@ -8,7 +8,7 @@ virtualenv env
 source env\scripts\activate
 pip install -r requirements.txt
 django-admin startproject <projectname>
-cd <projectname>test
+cd <projectname>
 ```
 If issues with mysqlclient library suitable for you system, download the mysqlclient wheel package and install manually with
 ```
