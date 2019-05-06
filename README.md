@@ -223,7 +223,7 @@ DATABASES = {
         'USER': 'username',
         'PASSWORD': 'password',
         'HOST': 'endpoint',
-        'PORT': 5432,
+        'PORT': 3306,
     }
 }
 ```
