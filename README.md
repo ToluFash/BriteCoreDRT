@@ -5,7 +5,7 @@ A test deployment for Dynamic Insurance Risks Type
 In your project folder
 ```
 virtualenv env
-source ve/scripts/activate
+source env\scripts\activate
 pip install -r requirements.txt
 django-admin startproject <projectname>
 cd <projectname>test
