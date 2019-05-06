@@ -183,9 +183,47 @@ While it's creating, look for the following settings in the tab Details:
 Get the following information after creation
 * VPC:
 * SECURITY GROUP:
-* SUBNETS(Bottom 3): []
 * ENDPOINT
+ 
+Creating Subnets 
+* From your VPC/Subnets Dashboard, Create 4 new  subnets under the Database VPC, maintaining the pattern of CIDR Increments to match the following names
+    * lambda-subnet-point-to-nat-1
+    * lambda-subnet-point-to-nat-2
+    * lambda-subnet-point-to-nat-3
+    * lambda-subnet-point-to-igw\
+[An Internet Gateway is created automatically for the vpc, you can get details from VPC/Internet Gateway
 
+Create a NAT Gateway
+* From your VPC/Internet Gateway Dashboard, Click Create NAT Gateway and set the Subnet* to lambda-subnet-point-to-igw, and Create New EIP.]
+
+####Creating Route Tables
+
+Set up two Route Tables
+
+One that points to your `nat` let's call this `lambda-rt-to-nat`:
+
+Destination|Target
+---|---
+131.179.0.0/16 | local 
+0.0.0.0/0 | nat-█████████████████
+
+One that points to your `igw` let's call this `lambda-rt-to-igw`:
+
+Destination|Target
+---|---
+131.179.0.0/16 | local 
+0.0.0.0/0 | igw-████████
+ 
+Go into each of the subnet and assign them to their corresponding `route table`.
+
+subnet name | route table name
+---|---
+lambda-subnet-point-to-nat-1 | lambda-rt-to-nat
+lambda-subnet-point-to-nat-2 | lambda-rt-to-nat
+lambda-subnet-point-to-nat-3 | lambda-rt-to-nat
+lambda-subnet-point-to-igw | lambda-rt-to-igw 
+ 
+ 
 Add the Security Group to Lambda
 * Go to AWS Lamda
 * Ensure your in the right region (I am using us-west-2 so it says Oregon in the top right next to Support and my name)
@@ -193,7 +231,7 @@ Add the Security Group to Lambda
 * Navigate to your Zappa Deployment. 
 * Scroll down to Network
 * In VPC select the VPC of your RDS DB (done above)
-* Add your Subnets (again from above).
+* Add your Subnets (again from above) except for lambda-subnet-point-to-igw.
 * In Security groups be sure to use the same value as your Security groups above.
 * Save settings.
 
@@ -213,6 +251,8 @@ Add Inbound/Outbound Rule to Security Group
     * Port Range: All, 
     * Destination: ::/0
  * Repeat for Outbound Tab
+
+ 
  
 Update Project Settings
 ```
@@ -266,6 +306,7 @@ python manage.py createsuperuser
 * Zappa : https://github.com/Miserlou/Zappa
 * Django static asset w Zappa: https://docs.djangoproject.com/en/2.1/howto/static-files/
 * Database : https://www.codingforentrepreneurs.com/blog/rds-database-serverless-django-zappa-aws-lambda
+* Internet Gateway : https://gist.github.com/reggi/dc5f2620b7b4f515e68e46255ac042a7
 
 ## Live Version
   - https://fd0osgpwb5.execute-api.us-west-2.amazonaws.com/bcdrt/
