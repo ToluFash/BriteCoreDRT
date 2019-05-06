@@ -130,7 +130,7 @@ zappa update dev
 * https://romandc.com/zappa-django-guide/walk_static/
 ## Using Deployment with Database
 * https://www.codingforentrepreneurs.com/blog/rds-database-serverless-django-zappa-aws-lambda
-##References
+## References
 * Django: https://www.djangoproject.com/
 * Using Amazon S3 to Store your Django Site's Static and Media Files: https://www.caktusgroup.com/blog/2014/11/10/Using-Amazon-S3-to-store-your-Django-sites-static-and-media-files/
 * Static files - Django Official Documentation: https://docs.djangoproject.com/en/2.1/howto/static-files/
