@@ -190,10 +190,10 @@ Add the Security Group to Lambda
 * Go to AWS Lamda
 * Ensure your in the right region (I am using us-west-2 so it says Oregon in the top right next to Support and my name)
 * Open sidebar, click Functions
-* Navigate to your Zappa Deployment. Mine is named zappacfe-dev, which is the same name as my pipenv with -dev appended. Click on the function name.
-* Scroll all the way down to Network
+* Navigate to your Zappa Deployment. 
+* Scroll down to Network
 * In VPC select the VPC of your RDS DB (done above)
-* Add your Subnets (again from above); I suggest all 3 of them
+* Add your Subnets (again from above).
 * In Security groups be sure to use the same value as your Security groups above.
 * Save settings.
 
@@ -218,7 +218,7 @@ Update Project Settings
 ```
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'name of database',
         'USER': 'username',
         'PASSWORD': 'password',
