@@ -18,14 +18,14 @@ THEN
 ```
 pip install django-bcdrt
 ```
-Add "bcdrt" to your INSTALLED_APPS settings
+* Add "bcdrt" to your INSTALLED_APPS settings
 ```
     INSTALLED_APPS = [
         ...
         'bcdrt',
     ]
 ```
-Modify your urls file
+* Modify your urls file
 ```
 from django.urls import path, include
 
@@ -40,7 +40,7 @@ Make Migrations to database
 python manage.py makemigrations
 python manage.py migrate
 ```
-Run Localhost
+* Run Localhost
 ```
 python manage.py runserver
 ```
@@ -69,7 +69,7 @@ STATICFILES_DIRS = [
 ```
 
 ## Deployment (Zappa)
-Add AWS User Credentials (AWS CLI) [Note: Ensure that the roles as specified here are assigned to the user]
+* Add AWS User Credentials (AWS CLI) [Note: Ensure that the roles as specified here are assigned to the user]
 ```
 aws configure
 AWS Access Key ID [****************GVEA]: <YOUR_AWS_ACCESS_KEY>
@@ -77,7 +77,7 @@ AWS Secret Access Key [****************VxPd]: <YOUR_AWS_SECRET_KEY>
 Default region name [us-west-2]: 
 Default output format [None]:
 ```
-Initialize Zappa
+* Initialize Zappa
 ```
 zappa init
 
@@ -127,9 +127,9 @@ Update Project
 zappa update dev
 ```
 ## Uploading Statics
-https://romandc.com/zappa-django-guide/walk_static/
+* https://romandc.com/zappa-django-guide/walk_static/
 ## Using Deployment with Database
-https://www.codingforentrepreneurs.com/blog/rds-database-serverless-django-zappa-aws-lambda
+* https://www.codingforentrepreneurs.com/blog/rds-database-serverless-django-zappa-aws-lambda
 ##References
 * Django: https://www.djangoproject.com/
 * Using Amazon S3 to Store your Django Site's Static and Media Files: https://www.caktusgroup.com/blog/2014/11/10/Using-Amazon-S3-to-store-your-Django-sites-static-and-media-files/
